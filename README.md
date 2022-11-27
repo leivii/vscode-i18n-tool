@@ -1,7 +1,7 @@
 # I18n Tool for VSCode
 
 <p align="center">
-  <img src="./icon.png" alt="I18n Tool for VSCode">
+  <img src="https://github.com/leivii/vscode-i18n-tool/raw/main/icon.png" alt="I18n Tool for VSCode">
 </p>
 
 <p align="center">
@@ -15,14 +15,14 @@
 </p>
 
 <p align="center">
-  <img src="./usage.gif" width="80%" alt="Example of I18n Tool" />
+  <img src="https://github.com/leivii/vscode-i18n-tool/raw/main/usage.gif" width="80%" alt="Example of I18n Tool" />
 </p>
 
 I18n Tool provides additional context of [JetBrains' IDEs style](https://blog.jetbrains.com/phpstorm/2017/03/new-in-phpstorm-2017-1-parameter-hints/) for your internationalized code. By displaying inline internationalized translations, it makes it easier to read complex internationalized keywords; Through code completions, we no longer need to look up the international dictionary.
 
 ## Configurations
 
-Click the extension icon <img src="./tip.jpg" width="20" /> in the lower left corner of the status bar , it will open `.i18ntoolrc` file, the internationalization prompt function can be enabled in the following two ways.
+Click the extension icon <img src="https://github.com/leivii/vscode-i18n-tool/raw/main/tip.jpg" width="20" /> in the lower left corner of the status bar , it will open `.i18ntoolrc` file, the internationalization prompt function can be enabled in the following two ways.
 
 ### 1. Specify internationalization file path
 
