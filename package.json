@@ -1,0 +1,155 @@
+{
+	"name": "i18n-tool",
+  "displayName": "I18n Tool for VSCode",
+	"description": "A i18n tool for inline annotations and auto completions",
+	"author": "keke",
+	"license": "MIT",
+	"version": "0.1.0",
+	"publisher": "kekeqiu",
+  "icon": "icon.png",
+	"categories": ["Other"],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/leivii/vscode-i18n-tool"
+	},
+	"keywords": [
+		"i18n",
+		"i18n tool",
+		"i18n plugin",
+		"inline i18n annotations",
+		"i18n auto completions"
+	],
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./client/out/extension.js",
+	"contributes": {
+		"commands": [
+      {
+        "command": "i18n-tool.toggle",
+        "title": "I18n Tool: Enable / Disable"
+      },
+      {
+        "command": "i18n-tool.open",
+        "title": "I18n Tool: Open .i18ntoolrc file"
+      },
+      {
+        "command": "i18n-tool.refresh",
+        "title": "I18n Tool: Refresh i18n data"
+      }
+    ],
+		"configuration": {
+			"type": "object",
+			"title": "Example configuration",
+			"properties": {
+				"editor.quickSuggestions.strings": {
+					"type": "string",
+					"default": "on"
+				},
+				"i18n-tool.enabled": {
+					"type": "boolean",
+					"description": "Show inline annotations and auto completions",
+					"default": true
+				},
+				"i18n-tool.lang": {
+					"type": "string",
+					"default": "zh_cn",
+					"description": "Current Language"
+				},
+				"i18n-tool.autodownload": {
+					"type": "boolean",
+					"default": false,
+					"description": "Auto download when configuration changes"
+				},
+				"i18n-tool.fontWeight": {
+					"type": "string",
+					"default": "400",
+					"enum": [
+						"100",
+						"200",
+						"300",
+						"400",
+						"500",
+						"600",
+						"700",
+						"800",
+						"900"
+					],
+					"description": "Annotation styling of font-weight CSS property"
+				},
+				"i18n-tool.fontStyle": {
+					"type": "string",
+					"default": "italic",
+					"enum": [
+						"normal",
+						"italic"
+					],
+					"description": "Annotation styling of font-style CSS property"
+				},
+				"i18n-tool.fontSize": {
+					"type": "string",
+					"default": "0.85em",
+					"description": "Annotation styling of font size CSS property"
+				},
+				"i18n-tool.margin": {
+					"type": "string",
+					"default": "0.25em",
+					"description": "Annotation styling of margin CSS property"
+				},
+				"i18n-tool.padding": {
+					"type": "string",
+					"default": "0.25em 0.5em",
+					"description": "Annotation styling of padding CSS property"
+				},
+				"i18n-tool.borderRadius": {
+					"type": "string",
+					"default": "0.25em",
+					"description": "Annotation styling of border-radius CSS property"
+				},
+				"i18n-tool.border": {
+					"type": "string",
+					"default": "none",
+					"description": "Annotation styling of border CSS property"
+				}
+			}
+		},
+		"colors": [
+			{
+				"id": "inlinetranslation.annotationForeground",
+				"description": "Specifies the foreground color for the annotations",
+				"defaults": {
+					"dark": "#adbec5",
+					"light": "#797a79",
+					"highContrast": "#adbec5"
+				}
+			},
+			{
+				"id": "inlinetranslation.annotationBackground",
+				"description": "Specifies the background color for the annotations",
+				"defaults": {
+					"dark": "#1e2c31",
+					"light": "#f4f5f4",
+					"highContrast": "#1e2c31"
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+	},
+	"devDependencies": {
+		"@types/mysql": "^2.15.21",
+		"@types/node": "^16.11.7",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"eslint": "^8.26.0",
+		"typescript": "^4.8.4"
+	}
+}
